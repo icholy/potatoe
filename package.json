@@ -1,0 +1,21 @@
+{
+  "name": "poop",
+  "version": "1.0.0",
+  "description": "crappy markup langauge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "peg": "pegjs --allowed-start-rules Tags -o build/Parser.js grammar.pegjs",
+    "tsc": "tsc",
+    "postinstall": "npm run tsc && npm run peg"
+  },
+  "author": "Ilia Choly <ilia.choly@gmail.com> (http://choly.ca)",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^6.0.45",
+    "@types/yargs": "0.0.33",
+    "pegjs": "^0.10.0",
+    "typescript": "^2.0.3",
+    "yargs": "^6.2.0"
+  }
+}
