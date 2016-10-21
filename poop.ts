@@ -15,13 +15,28 @@ fs.readFile(filename, (err, data) => {
   if (err) {
     throw err;
   }
+
+  // parse it
   let tags = parse<Tag[]>(data.toString(), { startRule: "Tags" });
 
+  // convert inline styles to classes
   let rewriter = new StyleRewriter();
   rewriter.replaceStyles(tags);
-  console.log(rewriter.getOutput());
+  let css = rewriter.getOutput();
 
+  // add style tag to tree
+  tags.unshift({
+    type:       "tag",
+    name:       "style",
+    attributes: [{ name: "type", value: "text/css" }],
+    styles:     [],
+    children:   [{ type: "text", content: css }]
+  });
+
+  // convert to html
   let gen = new Generator();
   gen.tags(tags);
-  console.log(gen.getOutput());
+  let html = gen.getOutput();
+
+  console.log(html);
 });
