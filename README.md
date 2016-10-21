@@ -19,6 +19,7 @@ $ npm install
 $ node build/poop.js examples/test.poop
 ```
 
+**test.poop**
 ```
 div(id="test") {
   background-color: green;
@@ -41,14 +42,13 @@ div(id="test") {
 }
 ```
 
-``` css
-.poop_A { background-color:green; }
-.poop_B { z-index:9999; }
-.poop_C { background-color:red; }
-
-```
-
+**output**
 ``` html
+<style type="text/css">
+  .poop_A { background-color:green; }
+  .poop_B { z-index:9999; }
+  .poop_C { background-color:red; }
+</style>
 <div id="test" class="poop_A poop_B">
   <a href="#">
      testing testing
@@ -63,5 +63,4 @@ div(id="test") {
      hello world
   </span>
 </div>
-
 ```
