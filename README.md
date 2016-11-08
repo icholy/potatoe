@@ -1,4 +1,4 @@
-POOP
+POTATOE
 ---
 
 > A crappy markup language
@@ -11,15 +11,15 @@ I use the [less](http://lesscss.org/) pre-processor which supports nesting rules
 What I realized is that my style structure are a reflection of my markup structure.
 So why can't I remove that duplication?
 
-Poop is an experimental markup language that embraces inline styling.
+Potatoe is an experimental markup language that embraces inline styling.
 It rewrites and deduplicates each individual rule into a css class (kinda like Tachyons).
 
 ```
 $ npm install
-$ node build/poop.js examples/test.poop
+$ node build/potatoe.js examples/test.potatoe
 ```
 
-**test.poop**
+**test.potatoe**
 ```
 div(id="test") {
   background-color: green;
@@ -45,16 +45,16 @@ div(id="test") {
 **output**
 ``` html
 <style type="text/css">
-  .poop_A { background-color:green; }
-  .poop_B { z-index:9999; }
-  .poop_C { background-color:red; }
+  .potatoe_A { background-color:green; }
+  .potatoe_B { z-index:9999; }
+  .potatoe_C { background-color:red; }
 </style>
-<div id="test" class="poop_A poop_B">
+<div id="test" class="potatoe_A potatoe_B">
   <a href="#">
      testing testing
   </a>
   <span>
-    <ul class="poop_C poop_B">
+    <ul class="potatoe_C potatoe_B">
       <li>
       </li>
       <li>

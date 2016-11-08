@@ -12,7 +12,7 @@ export class StyleRewriter {
   private sequence = new Sequence();
   private classMap = {} as { [rule: string]: string; };
   private output = "";
-  private prefix = "poop_";
+  private prefix = "potatoe_";
 
   getOutput(): string {
     return this.output;
